@@ -1,0 +1,674 @@
+/**
+ * style.css - Main Stylesheet
+ * Căn bản Bootstrap + Custom CSS cho Food Ordering App
+ */
+
+:root {
+  --primary-color: #4b9bea;
+  --secondary-color: #4ecdc4;
+  --dark-color: #2c3e50;
+  --light-color: #f8f9fa;
+  --danger-color: #ef6674;
+  --success-color: #26a65b;
+  --warning-color: #f0ad4e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  line-height: 1.6;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+
+.navbar {
+  background: var(--primary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: white !important;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+  transform: scale(1.05);
+}
+
+.navbar-brand i {
+  margin-right: 0.5rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: white !important;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: var(--danger-color);
+  color: white;
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* ============================================
+   HERO/BANNER
+   ============================================ */
+
+.hero {
+  background: var(--primary-color);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  animation: slideDown 0.6s ease-out;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+
+.food-card {
+  border: none;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 12px;
+  height: 100%;
+}
+
+.food-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.food-image {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-image {
+  transform: scale(1.05);
+}
+
+.food-card .card-title {
+  font-weight: 600;
+  color: var(--dark-color);
+  line-height: 1.3;
+}
+
+.food-card .card-text {
+  min-height: 40px;
+  line-height: 1.4;
+}
+
+.food-card .badge {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.6rem;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #3db8b1;
+  border-color: #3db8b1;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(78, 205, 196, 0.3);
+}
+
+.btn-outline-secondary {
+  color: var(--dark-color);
+  border-color: #ddd;
+}
+
+.btn-outline-secondary:hover {
+  background-color: var(--light-color);
+  border-color: var(--primary-color);
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.btn-danger {
+  background-color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.btn-danger:hover {
+  background-color: #ef4757;
+  border-color: #ef4757;
+}
+
+/* ============================================
+   FORMS
+   ============================================ */
+
+.form-control,
+.form-select {
+  border-color: #ddd;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+}
+
+.form-check-input {
+  border-color: #ddd;
+  cursor: pointer;
+}
+
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check-label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ============================================
+   FILTERS SIDEBAR
+   ============================================ */
+
+.filter-section {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.filter-section h5 {
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.filter-section .form-check {
+  margin-bottom: 0.75rem;
+}
+
+.price-range-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.price-range-container input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--dark-color);
+}
+
+/* ============================================
+   SEARCH BOX
+   ============================================ */
+
+.search-box {
+  margin-bottom: 2rem;
+}
+
+.search-box .form-control {
+  border: 2px solid #ddd;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+.search-box .form-control:focus {
+  border-color: var(--primary-color);
+}
+
+/* ============================================
+   CART PAGE
+   ============================================ */
+
+.cart-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item img {
+  border-radius: 8px;
+  object-fit: cover;
+  height: 120px;
+}
+
+.cart-summary {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 20px;
+}
+
+.cart-summary h5 {
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.summary-row strong {
+  color: var(--dark-color);
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  border-top: 2px solid #eee;
+  padding-top: 0.75rem;
+  margin-top: 1rem;
+}
+
+/* ============================================
+   CHECKOUT FORM
+   ============================================ */
+
+.checkout-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.checkout-section h4 {
+  font-weight: 700;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.checkout-section .form-group {
+  margin-bottom: 1rem;
+}
+
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.payment-method {
+  border: 2px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.payment-method:hover {
+  border-color: var(--primary-color);
+  background: rgba(78, 205, 196, 0.05);
+}
+
+.payment-method input[type="radio"] {
+  display: none;
+}
+
+.payment-method input[type="radio"]:checked + label {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.payment-method.active {
+  border-color: var(--primary-color);
+  background: rgba(78, 205, 196, 0.1);
+}
+
+/* ============================================
+   BADGES & ALERTS
+   ============================================ */
+
+.badge {
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.alert-info {
+  background-color: rgba(78, 205, 196, 0.1);
+  color: var(--secondary-color);
+}
+
+.alert-danger {
+  background-color: rgba(239, 102, 116, 0.1);
+  color: var(--danger-color);
+}
+
+.alert-success {
+  background-color: rgba(38, 166, 91, 0.1);
+  color: var(--success-color);
+}
+
+/* ============================================
+   TOAST NOTIFICATIONS
+   ============================================ */
+
+.toast-container {
+  z-index: 9999;
+}
+
+.toast {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  background: var(--dark-color);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 3rem;
+}
+
+footer h5 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+   PAGINATION
+   ============================================ */
+
+.pagination .page-link {
+  color: var(--primary-color);
+  border-color: #ddd;
+}
+
+.pagination .page-link:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: white;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cart-summary {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .payment-methods {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    padding: 1rem;
+  }
+
+  .cart-item .row {
+    flex-direction: column;
+  }
+
+  .cart-item .col-md-2,
+  .cart-item .col-md-3,
+  .cart-item .col-md-4 {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .filter-section {
+    margin-bottom: 1rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 2rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .food-image {
+    height: 150px;
+  }
+
+  .cart-item img {
+    height: 100px;
+  }
+
+  .btn-sm {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .checkout-section {
+    padding: 1rem;
+  }
+
+  .summary-row {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-muted {
+  color: #999;
+}
+
+.shadow-sm {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.rounded-lg {
+  border-radius: 12px;
+}
+
+.gap-3 {
+  gap: 1rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* ============================================
+   LOADING SPINNER
+   ============================================ */
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+.spinner-border {
+  color: var(--primary-color);
+}
+
+/* ============================================
+   EMPTY STATE
+   ============================================ */
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.empty-state i {
+  font-size: 3rem;
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+.empty-state p {
+  color: #999;
+  margin-bottom: 1rem;
+}
